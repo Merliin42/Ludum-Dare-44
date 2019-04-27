@@ -3,11 +3,11 @@
 [ext_resource path="res://Scenes/Map.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Mob.tscn" type="PackedScene" id=2]
 
-[sub_resource type="StreamTexture" id=2]
+[sub_resource type="StreamTexture" id=1]
 flags = 4
 load_path = "res://.import/Terrain.png-9703a07d1d2f0d717f261c8312fa2ff1.stex"
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -1182.38, -726.259, 0, 0, 0, 0, 1203.27, -705.891, 0, 0, 0, 0, 1203.27, 618.035, 0, 0, 0, 0, -1175.47, 638.403, 0, 0, 0, 0, -1182.38, -718.112, 0, 0, 0, 0, -1182.38, -726.259 )
 }
@@ -17,7 +17,7 @@ script = ExtResource( 1 )
 Mob = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = SubResource( 2 )
+texture = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -33,11 +33,11 @@ wait_time = 0.5
 [node name="MobPath" type="Path2D" parent="."]
 position = Vector2( -18.2055, 69.5497 )
 scale = Vector2( 1.34752, 1.1437 )
-curve = SubResource( 1 )
+curve = SubResource( 2 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2( -1182.38, -726.259 )
-rotation = 0.00857612
+rotation = 0.00856106
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
