@@ -7,8 +7,8 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	if(Input.is_action_just_pressed("ui_accept")):
-		detect()
+	if(Input.is_action_just_pressed("mouse_left")):
+		sword()
 	motion_loop()
 	$AnimatedSprite.play(animation())
 
@@ -37,7 +37,7 @@ func animation():
 			animation = "left"
 	return(animation)
 
-func detect():
+func sword():
 	$Sword.set_monitoring(true)
 	var view = get_global_mouse_position() - position
 	if(abs(view.x) < abs(view.y)):
@@ -55,6 +55,9 @@ func detect():
 	for i in monsters :
 		i.test()
 	$Sword.set_monitoring(false)
-	
+
+func gun():
+	pass
+
 func test():
 	print("it works")
