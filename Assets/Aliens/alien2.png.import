@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/alien1.PNG-55a72a013094aa67b46fc8c52da55ca7.stex"
+path="res://.import/alien2.png-bc25edbaddf70a22c033bbf63e0c8dba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/alien1.PNG"
-dest_files=[ "res://.import/alien1.PNG-55a72a013094aa67b46fc8c52da55ca7.stex" ]
+source_file="res://Assets/Aliens/alien2.png"
+dest_files=[ "res://.import/alien2.png-bc25edbaddf70a22c033bbf63e0c8dba.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
