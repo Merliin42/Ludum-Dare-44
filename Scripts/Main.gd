@@ -3,10 +3,11 @@ extends Node
 export (PackedScene) var Mob
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Character/Camera2D.make_current()
+	
 
 func _process(delta):
-	mobStart()
+	pass
 	
 func mobStart():
 	$MobPath/MobSpawnLocation.set_offset(randi())
