@@ -5,8 +5,6 @@
 [ext_resource path="res://Scenes/Map.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=4]
 
-
-
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 Mob = ExtResource( 2 )
@@ -14,10 +12,4 @@ Mob = ExtResource( 2 )
 [node name="Map" parent="." instance=ExtResource( 3 )]
 
 [node name="Character" parent="." instance=ExtResource( 4 )]
-
-[node name="Ennemi" parent="." instance=ExtResource( 2 )]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-zoom = Vector2( 3.5, 3 )
 
