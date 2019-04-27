@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
 [ext_resource path="res://Assets/CharacterAnimation/right.png" type="Texture" id=2]
@@ -32,9 +32,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 15, 15 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 15, 15 )
-
 [node name="Character" type="KinematicBody2D"]
 script = ExtResource( 1 )
 __meta__ = {
@@ -51,16 +48,4 @@ shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-
-[node name="Sword" type="Area2D" parent="."]
-monitoring = false
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
-shape = SubResource( 3 )
-
-[node name="Gun" type="RayCast2D" parent="."]
-enabled = true
 

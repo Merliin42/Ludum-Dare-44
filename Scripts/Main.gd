@@ -1,17 +1,13 @@
-extends StaticBody2D
+extends Node
 
 export (PackedScene) var Mob
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	randomize()
+	pass # Replace with function body.
+
+func _process(delta):
 	mobStart()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
+	
 func mobStart():
 	$MobPath/MobSpawnLocation.set_offset(randi())
 	var mob = Mob.instance()

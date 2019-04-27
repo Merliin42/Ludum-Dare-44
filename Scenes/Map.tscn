@@ -1,21 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Mob.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=3]
+[sub_resource type="GDScript" id=2]
+script/source = "extends StaticBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+"
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
 load_path = "res://.import/Terrain.png-9703a07d1d2f0d717f261c8312fa2ff1.stex"
 
-[sub_resource type="Curve2D" id=2]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -1182.38, -726.259, 0, 0, 0, 0, 1203.27, -705.891, 0, 0, 0, 0, 1203.27, 618.035, 0, 0, 0, 0, -1175.47, 638.403, 0, 0, 0, 0, -1182.38, -718.112, 0, 0, 0, 0, -1182.38, -726.259 )
-}
-
 [node name="StaticBody2D" type="StaticBody2D"]
-script = ExtResource( 1 )
-Mob = ExtResource( 2 )
+script = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = SubResource( 1 )
@@ -26,20 +25,3 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 280.063, 1074.57, 312.676, 1069.91, 37.7949, 1088.55, 112.339, 795.032, 154.27, 790.374, 1603.22, 776.396, 1593.9, -747.096, -265.04, -751.755, -1108.32, -751.755, -1630.13, -765.732, -1606.83, -393.012, -1644.1, 352.428, -1606.83, 790.374, -1210.82, 809.01, 103.021, 799.691, 47.113, 1083.89, -339.584, 1079.23, -1103.66, 1079.23, -1923.64, 1083.89, -1914.33, 156.75, -1918.98, -733.119, -1923.64, -1077.88, 1910.71, -1073.23, 1915.37, 1079.23 )
 
-[node name="Ennemi" parent="." instance=ExtResource( 2 )]
-
-[node name="MobTimer" type="Timer" parent="."]
-wait_time = 0.5
-
-[node name="MobPath" type="Path2D" parent="."]
-position = Vector2( -18.2055, 69.5497 )
-scale = Vector2( 1.34752, 1.1437 )
-curve = SubResource( 2 )
-
-[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2( -1182.38, -726.259 )
-rotation = 0.00856106
-
-[node name="Character" parent="." instance=ExtResource( 3 )]
-
-[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
