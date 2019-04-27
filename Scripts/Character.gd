@@ -7,6 +7,8 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
+	if(Input.is_action_just_pressed("ui_accept")):
+		detect()
 	motion_loop()
 	$AnimatedSprite.play(animation())
 
@@ -34,3 +36,25 @@ func animation():
 		else:
 			animation = "left"
 	return(animation)
+
+func detect():
+	$Sword.set_monitoring(true)
+	var view = get_global_mouse_position() - position
+	if(abs(view.x) < abs(view.y)):
+		if(view.y > 0):
+			$Sword.position = Vector2(0, 35)
+		else:
+			$Sword.position = Vector2(0, -35)
+	else:
+		if(view.x > 0):
+			$Sword.position = Vector2(35, 0)
+		else:
+			$Sword.position = Vector2(-35, 0)
+	var monsters = $Sword.get_overlapping_bodies()
+#	Modifier ce passage pour tuer les monstres
+	for i in monsters :
+		i.test()
+	$Sword.set_monitoring(false)
+	
+func test():
+	print("it works")
