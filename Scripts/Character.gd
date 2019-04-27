@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var movedir = Vector2()
 export var SPEED = int()
+var monsters = []
 
 func _ready():
 	pass # Replace with function body.
@@ -56,10 +57,9 @@ func sword():
 		else:
 			$Sword.position = Vector2(-35, 0)
 	var monsters = $Sword.get_overlapping_bodies()
-	print(monsters)
 #	Modifier ce passage pour tuer les monstres
-	for i in monsters :
-		i.test()
+	for mob in monsters :
+		mob.test()
 
 func gun():
 	$Gun.set_cast_to(get_global_mouse_position()-position)
@@ -67,11 +67,6 @@ func gun():
 	var mob = $Gun.get_collider()
 	if(mob != null):
 		mob.test()
-	else:
-		print("no mob")
 
 func dash():
 	pass
-
-func test():
-	print("it works")
