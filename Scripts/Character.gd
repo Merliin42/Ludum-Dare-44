@@ -12,6 +12,8 @@ func _process(delta):
 		sword()
 	if(Input.is_action_just_pressed("mouse_right")):
 		gun()
+	if(Input.is_action_just_pressed("ui_select")):
+		dash()
 	motion_loop()
 	$AnimatedSprite.play(animation())
 
@@ -67,6 +69,9 @@ func gun():
 		mob.test()
 	else:
 		print("no mob")
+
+func dash():
+	pass
 
 func test():
 	print("it works")
