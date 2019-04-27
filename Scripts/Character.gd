@@ -6,9 +6,12 @@ export var SPEED = int()
 func _ready():
 	pass # Replace with function body.
 
+#warning-ignore:unused_argument
 func _process(delta):
 	if(Input.is_action_just_pressed("mouse_left")):
 		sword()
+	if(Input.is_action_just_pressed("mouse_right")):
+		gun()
 	motion_loop()
 	$AnimatedSprite.play(animation())
 
@@ -20,6 +23,7 @@ func motion_loop():
 	
 	movedir.x = -int(left) + int(right)
 	movedir.y = -int(up) + int(down)
+#warning-ignore:return_value_discarded
 	move_and_slide(movedir * SPEED)
 
 func animation():
@@ -57,7 +61,12 @@ func sword():
 	$Sword.set_monitoring(false)
 
 func gun():
-	pass
+	$Gun.set_cast_to(get_global_mouse_position()-position)
+	var mob = $Gun.get_collider()
+	if(mob != null):
+		mob.test()
+	else:
+		print("no mob")
 
 func test():
 	print("it works")

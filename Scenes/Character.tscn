@@ -37,6 +37,9 @@ extents = Vector2( 15, 15 )
 
 [node name="Character" type="KinematicBody2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 SPEED = 650
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -58,5 +61,6 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
 shape = SubResource( 3 )
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="Gun" type="RayCast2D" parent="."]
+enabled = true
 
