@@ -18,7 +18,7 @@ func motion_loop():
 	
 	movedir.x = -int(left) + int(right)
 	movedir.y = -int(up) + int(down)
-	position += movedir * SPEED
+	move_and_slide(movedir * SPEED)
 
 func animation():
 	var animation = String()
