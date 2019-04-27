@@ -44,7 +44,6 @@ func animation():
 	return(animation)
 
 func sword():
-	$Sword.set_monitoring(true)
 	var view = get_global_mouse_position() - position
 	if(abs(view.x) < abs(view.y)):
 		if(view.y > 0):
@@ -57,13 +56,14 @@ func sword():
 		else:
 			$Sword.position = Vector2(-35, 0)
 	var monsters = $Sword.get_overlapping_bodies()
+	print(monsters)
 #	Modifier ce passage pour tuer les monstres
 	for i in monsters :
 		i.test()
-	$Sword.set_monitoring(false)
 
 func gun():
 	$Gun.set_cast_to(get_global_mouse_position()-position)
+	$Gun.force_raycast_update()
 	var mob = $Gun.get_collider()
 	if(mob != null):
 		mob.test()
