@@ -1,21 +1,10 @@
 extends Node
 
-export (PackedScene) var Mob
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$Character/Camera2D.make_current()
-	
+	pass
 
 func _process(delta):
 	pass
-	
-func mobStart():
-	$MobPath/MobSpawnLocation.set_offset(randi())
-	var mob = Mob.instance()
-	add_child(mob)
-	var direction = $MobPath/MobSpawnLocation.rotation + PI/2
-	mob.position = $MobPath/MobSpawnLocation.position
-	# add some randomness to the direction
-	direction += rand_range(-PI/4, PI/4)
-	mob.rotation = direction
-	mob.move_and_slide(Vector2(rand_range(mob.MIN_SPEED, mob.MAX_SPEED), 0).rotated(direction))
+
+func get_player_pos():
+	return $Character.get_position()
