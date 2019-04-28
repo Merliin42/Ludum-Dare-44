@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 export var SPEED = int()
 
+func _ready():
+	pass
+
 func _process(delta):
 	GoOnPlayer()
 
@@ -20,3 +23,11 @@ func GoOnPlayer():
 		direction.y = 0
 #warning-ignore:return_value_discarded
 	move_and_slide(direction*SPEED)
+
+func _on_Area2D_body_entered(body):
+	if body.get_name() == "Character":
+		body.ouch()
+
+
+func _on_VisibilityNotifier2D_screen_entered():
+	SPEED = rand_range(300, 500)

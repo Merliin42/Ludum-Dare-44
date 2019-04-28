@@ -5,7 +5,7 @@ export var SPEED = int()
 var monsters = []
 
 func _ready():
-	pass # Replace with function body.
+	print(name)
 
 #warning-ignore:unused_argument
 func _process(delta):
@@ -70,3 +70,6 @@ func gun():
 
 func dash():
 	pass
+
+func ouch():
+	print("ouch")
