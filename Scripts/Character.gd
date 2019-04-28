@@ -14,7 +14,11 @@ func _process(delta):
 	if(Input.is_action_just_pressed("mouse_right")):
 		gun()
 	if(Input.is_action_just_pressed("ui_select")):
+		$Character/CollisionShape2D.disabled = true
 		dash()
+		$Character/CollisionShape2D.disabled = false
+	if(Input.is_action_just_pressed("ui_accept")):
+		bomb()
 	motion_loop()
 	$AnimatedSprite.play(animation())
 
@@ -69,7 +73,28 @@ func gun():
 		mob.test()
 
 func dash():
+	var view = get_global_mouse_position() - position
+	if(abs(view.x) < abs(view.y)):
+		if(view.y > 0):
+			movedir.x = 0
+			movedir.y = 1
+		else:
+			movedir.x = 0
+			movedir.y = -1
+	else:
+		if(view.x > 0):
+			movedir.x = 1
+			movedir.y = 0
+		else:
+			movedir.x = -1
+			movedir.y = 0
+	move_and_slide(movedir * (SPEED*3))
+	
+func bomb():
 	pass
 
 func ouch():
 	print("ouch")
+	
+func test():
+	print("it works")
