@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/alienType2_2.png-eabda05cad718ffd69564523d51e24b8.stex"
+path="res://.import/alienType2_1.png-dbd3dc8d21a4a60502096bb47c0bd0ed.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/alienType2_2.png"
-dest_files=[ "res://.import/alienType2_2.png-eabda05cad718ffd69564523d51e24b8.stex" ]
+source_file="res://Assets/Aliens/alienType2_1.png"
+dest_files=[ "res://.import/alienType2_1.png-dbd3dc8d21a4a60502096bb47c0bd0ed.stex" ]
 
 [params]
 
