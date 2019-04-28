@@ -93,11 +93,7 @@ func dash():
 	move_and_slide(movedir * (SPEED*3))
 	
 func bomb():
-	$Bomb.position = $Character.position 
-	$Bomb/BombTimer.start()
+	pass
 
 func test():
 	print("it works")
-
-func _on_BombTimer_timeout():
-	$Bomb/CollisionShape2D.disabled = false

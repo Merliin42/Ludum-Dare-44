@@ -64,12 +64,3 @@ shape = SubResource( 3 )
 [node name="Gun" type="RayCast2D" parent="."]
 enabled = true
 
-[node name="Bomb" type="Area2D" parent="."]
-
-[node name="BombTimer" type="Timer" parent="Bomb"]
-wait_time = 3.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bomb"]
-disabled = true
-
-[connection signal="timeout" from="Bomb/BombTimer" to="." method="_on_BombTimer_timeout"]
