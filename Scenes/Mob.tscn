@@ -20,13 +20,12 @@ animations = [ {
 radius = 30.0
 height = 30.0
 
-[node name="Ennemi" type="KinematicBody2D"]
+[node name="Ennemi" type="RigidBody2D"]
 collision_mask = 0
+mode = 2
+gravity_scale = 0.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-SPEED = 200
+SPEED = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

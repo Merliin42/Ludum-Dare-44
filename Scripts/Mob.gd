@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 export var SPEED = int()
 
@@ -9,7 +9,7 @@ func _process(delta):
 	GoOnPlayer()
 
 func test():
-	print("ouch the gun")
+	get_parent().remove_child(self)
 
 func GoOnPlayer():
 	var direction = get_parent().get_player_pos()-position
@@ -22,7 +22,7 @@ func GoOnPlayer():
 	else:
 		direction.y = 0
 #warning-ignore:return_value_discarded
-	move_and_slide(direction*SPEED)
+	apply_impulse(Vector2(0, 0), direction*SPEED)
 
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "Character":
@@ -30,4 +30,4 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_VisibilityNotifier2D_screen_entered():
-	SPEED = rand_range(300, 500)
+	SPEED = rand_range(5, 10)
