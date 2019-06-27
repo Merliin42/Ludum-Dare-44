@@ -69,7 +69,7 @@ func gun():
 	$Gun.set_cast_to(get_global_mouse_position()-position)
 	$Gun.force_raycast_update()
 	var mob = $Gun.get_collider()
-	if(mob != null):
+	if(mob != null and mob.name != "Map"):
 		mob.test()
 
 func dash():
@@ -89,6 +89,7 @@ func dash():
 #			movedir.x = -1
 #			movedir.y = 0
 #	move_and_slide(movedir * (SPEED*3))
+	pass
 	SPEED*=3
 	
 	
